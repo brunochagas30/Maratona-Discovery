@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças</title>
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+
+
+
+<body>
+
+    <header>
+        <img src="./assets/logo.svg" alt="Logo Dev Finances">
+    </header>
+    <main class="container">
+
+        <section id="balance">
+            <h2 class="sronly">Balanço</h2>
+            <!-- local onde foi inserido a classificação para cartões  -->
+            <div class="cards">
+                <h3>
+                    <span>Entradas</span>
+                    <img src="./assets/income.svg" alt="entradas">
+                </h3>
+                <p id="incomeDisplay">R$ 0,00</p>
+
+
+            </div>
+
+            <div class="cards">
+                <h3>
+                    <span> Saídas</span>
+                    <img src="./assets/expense.svg" alt="Saídas">
+                </h3>
+                <p id="expenseDisplay">R$ 0,00</p>
+            </div>
+
+            <div class="cards total">
+                <h3>
+                    <span> Saldo final</span>
+                    <img src="./assets/total.svg" alt="Total">
+                </h3>
+                <p id="totalDisplay">R$ 0,00</p>
+            </div>
+
+        </section>
+
+        <section id="transactions">
+            <h2 class="sronly">Transações</h2>
+
+            <a href="#" onclick="Modal.open()" class="button new">Nova transação</a>
+
+            <table id="data_table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor (R$)</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--                     <tr>
+                        <td class="description">Água</td>
+                        <td class="expense">- R$ 160,00</td>
+                        <td class="data">27/02/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="remover transação">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="description">Academia</td>
+                        <td class="expense">- R$ 110,00</td>
+                        <td class="data">02/03/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="remover transação">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="description">Pigmeu</td>
+                        <td class="income"> R$ 200,00</td>
+                        <td class="data">26/02/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="remover transação">
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2>Nova transação</h2>
+                <form action="" submit="Form.submit(event)">
+
+                    <div class="input-group">
+                        <label class="sronly" for="description">Descrição</label>
+                        <input type="text" id="description" name="description" placeholder="Descrição" />
+                    </div>
+
+                    <div class="input-group">
+                        <label class="sronly" for="amount">Valor</label>
+                        <input type="number" id="amount" name="amount" placeholder="0,00" step="1.00" />
+                        <small class="help">Use o sinal - (negativo) para despesas e , (vírgula) para casas
+                            decimais</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="sronly" for="date">Data</label>
+                        <input type="date" id="date" name="date" placeholder="" />
+                    </div>
+                    <div class="input-group actions">
+                        <a onclick="Modal.close()" href="#" class="button cancel">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <P>BrunoChaga$</P>
+    </footer>
+
+    <script src="./scripts.js">
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+/* O asterisco significa global, border box independe do tamanho do objeto
+sempre vai estar alinhado os pixels */
+
+:root {
+    /*local de declaração de variáveis*/
+    --darkblue: #363f5f;
+    --green: #49AA26;
+    --lightgreen: #3dd705;
+    --hovercolor: #1b1a1a;
+    --boxcolor: rgb(41, 40, 40);
+}
+
+* {
+    margin: 0;
+    /*restaurado a base das margens*/
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 93.75%;
+}
+
+
+/* Cor do fundo do local e a familia de fontes utilizadas (roboto) */
+
+body {
+    background: #151515;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* Informações do main ===========================*/
+
+.container {
+    width: min(90vw, 800px);
+    margin: auto;
+    /*margens automáticas*/
+}
+
+
+/* Screen readers (desabilita do nav mas ainda lido)========*/
+
+.sronly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+/* Informações dos titulos ===========================*/
+
+h2 {
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark-blue);
+    font-weight: normal;
+}
+
+
+/* Informações do cabeçalho ===========================*/
+
+header {
+    background: #27217c;
+    padding: 2rem 0 10rem;
+    text-align: center;
+}
+
+#logo {
+    color: #FFF;
+    font-weight: 100;
+}
+
+
+/* Informação do Balanço =============================================*/
+
+#balance {
+    margin-top: -8rem;
+    /*Neste caso foi retirado o espaçamento*/
+}
+
+#balance h2 {
+    color: white;
+    margin-top: 0;
+    /*Zerado para "colar" no lado esquerdo*/
+    margin-left: 2rem;
+}
+
+
+/* Informação dos cartões =============================================*/
+
+.cards {
+    background: var(--boxcolor);
+    padding: 1.5rem 2rem;
+    /*preenchimento*/
+    border-radius: 0.25rem;
+    /*arredondamento das bordas*/
+    margin-bottom: 2rem;
+    color: white;
+    /*margens inferiores*/
+}
+
+.cards:hover {
+    background: var(--hovercolor);
+}
+
+.cards h3 {
+    font-weight: normal;
+    font-size: 1rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cards p {
+    font-weight: normal;
+    font-size: 2rem;
+    /* fonte com o dobro do tamanho*/
+    line-height: 3rem;
+    /*altura da linha, evita que os dados se sobreponham*/
+    margin-top: 1rem;
+    /*margem inferior*/
+    color: white;
+}
+
+.cards.total {
+    background: var(--green);
+    color: black;
+}
+
+.cards.total h3,
+.cards.total p {
+    color: black;
+    font-weight: bold;
+}
+
+.cards.total:hover {
+    background: var(--lightgreen);
+}
+
+
+/* Informação da table =============================================*/
+
+a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--lightgreen);
+}
+
+
+/*Botões ============================*/
+
+button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: white;
+    background: var(--green);
+    padding: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--lightgreen);
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+}
+
+.button.cancel {
+    color: white;
+    background: #e92929;
+    border: 2px #e92929 solid;
+    border-radius: 0.25rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+}
+
+.button.cancel:hover {
+    opacity: 1;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+    width: 48%;
+}
+
+
+/*Tabela=========================================*/
+
+#transactions {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+#data_table {
+    border-spacing: 0 0.5rem;
+    color: white;
+    width: 100%;
+}
+
+
+/*===Pseudo classes e pseudo elementos table========================*/
+
+table thead tr th:first-child,
+table tbody tr td:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+table th {
+    background: var(--boxcolor);
+    font-weight: normal;
+    padding: 1rem 2rem;
+    text-align: left;
+}
+
+table tbody tr {
+    opacity: 0.85;
+}
+
+table tr:hover {
+    opacity: 1;
+}
+
+table tbody td {
+    /* espaços e cor do TD (preenchimento interno) */
+    background: var(--boxcolor);
+    padding: 1rem 2rem;
+}
+
+td.description {
+    color: var(--dark-blue);
+}
+
+td.income {
+    color: #12a454;
+}
+
+td.expense {
+    color: #eb0505;
+}
+
+
+/* Rodapé ================================================================ */
+
+footer {
+    /*rodapé da pagina*/
+    text-align: center;
+    /*alinhamento do texto do rodapé*/
+    padding: 4rem 0 2rem;
+    color: whitesmoke;
+    opacity: 0.6;
+}
+
+
+/* Modal (tricks)  ====================================================== */
+
+#form {
+    max-width: 500px;
+}
+
+#form h2 {
+    margin-top: 0;
+}
+
+input {
+    background: var(--boxcolor);
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    width: 100%;
+    color: whitesmoke;
+}
+
+.input-group {
+    margin-top: 0.8rem;
+}
+
+.input-group ::placeholder {
+    color: white;
+    opacity: 0.4;
+}
+
+.input-group small {
+    opacity: 0.4;
+}
+
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: #151515;
+    padding: 2.4rem;
+    position: relative;
+    z-index: 1;
+    color: whitesmoke;
+    border-radius: 0.25rem;
+}
+
+
+/* responsividade */
+
+@media (min-width:800px) {
+    html {
+        font-size: 87.5%;
+    }
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
